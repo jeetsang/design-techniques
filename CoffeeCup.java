@@ -11,6 +11,8 @@ public class CoffeeCup {
 	private boolean sizeValid;
 	private int size;
 	private int innerCoffee;
+	private int innerCream;
+	private int innerSugar;
 	private boolean needWashing;
 	public CoffeeCup() {
 
@@ -61,7 +63,7 @@ public class CoffeeCup {
 		return retValue;
 	}
 
-	public int add(int amount) throws InvalidObjectException {
+	public int addCoffee(int amount) throws InvalidObjectException {
 		if(!sizeValid) {
 			throw new InvalidObjectException();
 		}
@@ -77,6 +79,13 @@ public class CoffeeCup {
 		return spillAmout;
 	}
 
+	public void addCream(int amount) {
+		innerCream += amount;
+	}
+
+	public void addSugar(int amount) {
+		innerSugar += amount;
+	}
 	public boolean isReadyForNextUse() {
 		return !needWashing;
 	}
