@@ -11,6 +11,7 @@ public class CoffeeCup {
 	private boolean sizeValid;
 	private int size;
 	private int innerCoffee;
+	private boolean needWashing;
 	public CoffeeCup() {
 
 	}
@@ -74,6 +75,18 @@ public class CoffeeCup {
 		}
 
 		return spillAmout;
+	}
+
+	public boolean isReadyForNextUse() {
+		return !needWashing;
+	}
+
+	public void setCustomerDone(){
+		needWashing = true;
+	}
+
+	public void wash(){
+		needWashing = false;
 	}
 
 	//Test Client
